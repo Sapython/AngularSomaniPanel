@@ -1,0 +1,123 @@
+.main-container {
+  display: flex;
+  width: 100%;
+  user-select: none;
+  /* border: 2px solid blueviolet; */
+  height: 100%;
+}
+
+/* section 1 */
+.main-container .logo-section {
+  /* border: 10px solid red; */
+  width: 55%;
+  background-color: #2f1a00;
+  height: 100%;
+  margin: 0;
+}
+
+.main-container .logo-section .logo {
+  /* border: 2px solid red; */
+  text-align: center;
+  margin-top: 50px;
+}
+
+/* section 2 */
+.main-container .login-section {
+  /* border: 10px solid blue; */
+  width: 45%;
+}
+
+.main-container .login-section .login {
+  margin: auto;
+  margin-top: 140px;
+  /* border: 2px solid orangered; */
+  width: 347px;
+}
+
+.main-container .login-section .login .forget-password {
+  font-size: 24px;
+  font-family: "Roboto";
+  font-weight: bold;
+}
+
+.main-container .login-section .login .forget-text {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  margin-top: 10px;
+}
+
+.login-form {
+  margin-top: 60px;
+}
+
+.example-container mat-form-field + mat-form-field {
+  margin-left: 8px;
+  width: 100%;
+}
+
+.example-right-align {
+  text-align: right;
+  width: 100%;
+}
+
+input.example-right-align::-webkit-outer-spin-button,
+input.example-right-align::-webkit-inner-spin-button {
+  display: none;
+}
+
+input.example-right-align {
+  -moz-appearance: textfield;
+}
+
+.login_btn {
+  color: #fff;
+  background-color: orange;
+  width: 100%;
+}
+
+/* .main-container .login-section .login .login-form{
+    margin-top: 60px;
+    font-size: 23px;
+    font-family: 'Roboto';
+}
+
+
+.main-container .login-section .login .login-form .form-field{
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-top: 6px;
+    margin-bottom: 16px;
+    resize: vertical;
+} */
+
+.main-container .login-section .login .buttons {
+  margin-top: 10px;
+  font-family: "Roboto";
+}
+
+.main-container .login-section .login .buttons .login-now {
+  width: 100%;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  font-size: 16px;
+  background-color: orange;
+  color: white;
+  text-align: center;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.main-container .login-section .join {
+  display: flex;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 14px;
+  margin-top: 200px;
+  font-family: "Roboto";
+  /* border: 2px solid red; */
+}

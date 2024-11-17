@@ -1,0 +1,47 @@
+<form [formGroup]="serviceForm">
+    <div>
+        <h1 style="font-family: 'Montserrat';">Enter Details</h1>
+        <mat-form-field>
+          <mat-label>Service</mat-label>
+          <input
+            matInput
+            placeholder="Enter Service Name"
+            name="name"
+            formControlName="name"
+            required
+          />
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label>Price</mat-label>
+          <input
+            matInput
+            placeholder="Enter Service Price"
+            name="name"
+            type="number"
+            formControlName="price"
+            required
+          />
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label>Description</mat-label>
+          <textarea
+            matInput
+            placeholder="Description"
+            name="name"
+            formControlName="description"
+            required
+          ></textarea>
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label>Category</mat-label>
+          <mat-select formControlName="category">
+            <mat-option [value]="category.id" *ngFor="let category of categories">
+              {{category.name}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      <div style="text-align: right;">
+        <button mat-button (click)="edit(services.id)">Edit</button>
+      </div>
+    </div>
+</form>

@@ -1,0 +1,38 @@
+<form [formGroup]="packageForm" (ngSubmit)="submit()">
+  <mat-form-field appearance="outline">
+    <mat-label>Package Name</mat-label>
+    <input type="text" matInput formControlName="name">
+  </mat-form-field>
+  <mat-form-field appearance="outline">
+    <mat-label>Package Price</mat-label>
+    <input type="number" matInput formControlName="price">
+  </mat-form-field>
+  <mat-form-field appearance="outline">
+    <mat-label>Services</mat-label>
+    <mat-select multiple formControlName="services">
+      <mat-option [value]="service" *ngFor="let service of services">
+        {{ service.name }} - {{service.price}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+  <mat-form-field appearance="outline">
+    <mat-label>Category</mat-label>
+    <mat-select formControlName="category">
+      <mat-option [value]="category.id" *ngFor="let category of categories">
+        {{category.name}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+  <mat-form-field appearance="outline">
+    <mat-label>Employees</mat-label>
+    <mat-select multiple formControlName="employees">
+      <mat-option [value]="employee" *ngFor="let employee of employees">
+        {{ employee.name }} - {{employee.post | titlecase}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+  <div class="row">
+    <button mat-stroked-button color="warn">Cancel</button>
+    <button mat-flat-button color="primary">Submit</button>
+  </div>
+</form>

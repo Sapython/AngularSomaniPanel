@@ -1,0 +1,35 @@
+.grid{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap:20px;
+    padding: 10px;
+}
+.box-hr{
+    display: flex;
+    box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.1);
+    padding: 8px;
+    border-radius: 15px;
+}
+.box-vr{
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0px 3px 15px rgba(0,0,0,0.1);
+    padding: 8px;
+    border-radius: 15px;
+}
+.row{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    gap:10px;
+    /* border-bottom: 1px solid #ccc; */
+}
+mat-form-field{
+    width: 100%;
+}
+section{
+    overflow-y: auto;
+    height: 80vh;
+}

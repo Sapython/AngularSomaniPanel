@@ -1,0 +1,33 @@
+<header>
+    <mat-form-field appearance="outline">
+        <mat-label>Search</mat-label>
+        <input type="search" #input matInput>
+    </mat-form-field>
+</header>
+<div class="tableContainer">
+    <table>
+        <thead>
+            <tr>
+                <th>Action</th>
+                <th>Service</th>
+                <th>Price</th>
+                <th>Category</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td colspan="4">Results {{services.length}}</td>
+            </tr>
+            <tr *ngFor="let service of (searchTerm!='' ? services : data.services); let i = index;" (click)="checkbox.checked = !checkbox.checked;setValue(checkbox,i,service.id)">
+                <td><mat-checkbox color="primary" disabled [checked]="this.selectedServices.includes(service.id)" #checkbox></mat-checkbox></td>
+                <td>{{service.name}}</td>
+                <td>{{service.price}}</td>
+                <td>{{service.category?.name}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<div class="row">
+    <button mat-stroked-button color="primary" type="button" (click)="close.emit()">Cancel</button>
+    <button mat-flat-button color="primary" (click)="submit()">Submit</button>
+</div>

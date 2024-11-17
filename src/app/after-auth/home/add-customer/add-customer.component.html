@@ -1,0 +1,22 @@
+<form [formGroup]="customers">
+
+    <div>
+        <h1 style="font-family: 'Montserrat';">Enter Details</h1>
+        <mat-form-field>
+          <mat-label>Name</mat-label>
+          <input matInput placeholder="Customer Name" name="name" formControlName="name" required>
+        </mat-form-field>
+
+        &nbsp; &nbsp; 
+  
+        <mat-form-field>
+            <mat-label>Contact</mat-label>
+            <input matInput placeholder="Contact Number" name="contact" formControlName="contact" required>
+          </mat-form-field>
+        
+          <div style="text-align: right;">
+            <button type="button" mat-button (click)= "reset()">Reset</button>
+            <button mat-button (click)="submit()">Submit</button>
+          </div>
+    </div>
+  </form>

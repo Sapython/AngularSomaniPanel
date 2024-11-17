@@ -1,0 +1,85 @@
+<main>
+  <header>
+    <h1>Services Available</h1>
+    <button mat-icon-button (click)="addServices()">
+      <mat-icon>add</mat-icon>
+    </button>
+    <!-- <button mat-icon-button (click)="export()">
+      <mat-icon>print</mat-icon>
+    </button> -->
+    <input type="file" name="" id="" (change)="uploadFromCsv($event)">
+  </header>
+  <mat-card>
+    <table>
+      <thead>
+        <tr>
+          <th *ngFor="let head of header">{{ head }}</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let service of servicesData; let i = index" style="width: 100%">
+          <td>{{ i + 1 }}</td>
+          <td>{{ service.name }}</td>
+          <td>{{ service.price }}</td>
+          <td>{{ service.category?.name }}</td>
+          <td>
+            <button
+              mat-icon-button
+              class="blue-icon"
+              (click)="updateService(service)"
+            >
+              <mat-icon>edit</mat-icon>
+            </button>
+            <button
+              mat-icon-button
+              class="red-icon"
+              (click)="deleteService(service.id)"
+            >
+              <mat-icon>delete</mat-icon>
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    
+  </mat-card>
+  <div class="row">
+    <h1>Categories</h1>
+    <button mat-icon-button (click)="addCategory()">
+      <mat-icon>add</mat-icon>
+    </button>
+  </div>
+  <mat-card>
+    <table>
+      <thead>
+        <tr>
+          <th *ngFor="let head of categoriesHeader">{{ head }}</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let category of categoriesData; let i = index" style="width: 100%">
+          <td>{{ i + 1 }}</td>
+          <td>{{ category.name }}</td>
+          <td>{{ category.description }}</td>
+          <td style="font-size: 20px; width: 15%; padding-left: 0">
+            <button
+              mat-icon-button
+              class="blue-icon"
+              (click)="updateCategory(category)"
+            >
+              <mat-icon>edit</mat-icon>
+            </button>
+            <button
+              mat-icon-button
+              class="red-icon"
+              (click)="deleteCategory(category.id)"
+            >
+              <mat-icon>delete</mat-icon>
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    
+  </mat-card>
+</main>

@@ -1,0 +1,18 @@
+.main-container {
+    display: flex;
+  height: 100%;
+  width: 100%;
+}
+.main-container .container1 {
+  width: 300px;
+  height: 100%;
+}
+.outlet{
+    position: relative;
+    width: 100%;
+}
+router-outlet {
+  flex: 1;
+  /* height: 100%;
+    width: 100%; */
+}

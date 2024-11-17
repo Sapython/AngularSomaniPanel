@@ -1,0 +1,48 @@
+<div class="main-container">
+  <!-- LOGO SECTION 1 -->
+  <div class="logo-section">
+    <div class="logo">
+      <img src="assets/img/21.png" />
+    </div>
+  </div>
+
+  <!-- LOGIN CREDENTIALS SECTION 2 -->
+  <div class="login-section">
+    <div class="login">
+      <!-- 1 -->
+      <div class="forget-password">Forgot Password</div>
+
+      <!-- 2 -->
+      <div class="forget-text">We will send the OTP on email</div>
+
+      <!-- 3 -->
+      <div class="login-form">
+        <form action="#">
+          <!-- <label for="email" style="font-family: 'Roboto'; font-size:16px">Email</label>
+                    <input type="text" class ="form-field" name="email" id="email" placeholder="Enter your email" style="font-family: 'Roboto'; font-size:14px"> -->
+          <div class="example-container">
+            <mat-form-field appearance="outline" style="width: 100%">
+              <mat-label>Enter your email</mat-label>
+              <input matInput placeholder="" formControlName="" required />
+            </mat-form-field>
+          </div>
+        </form>
+      </div>
+
+      <!-- 4 -->
+      <div class="buttons">
+        <!-- <div class="login-now" (click)="otp()">Continue</div> -->
+        <button mat-raised-button routerLink="/before-auth/otp" class="login_btn">
+          Continue
+        </button>
+      </div>
+
+      <!-- 5 -->
+      <div class="join">
+        <p>Don't have an account?</p>
+        &nbsp;
+        <p style="color: rgb(3, 3, 136)" routerLink="/before-auth/login">Join free today</p>
+      </div>
+    </div>
+  </div>
+</div>

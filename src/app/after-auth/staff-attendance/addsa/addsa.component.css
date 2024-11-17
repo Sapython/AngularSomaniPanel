@@ -1,0 +1,22 @@
+/* .box{
+    width: 100%;
+} */
+.btn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+button {
+    margin-top: 1em;
+    width: 90%;
+    border-radius: 10px;
+    height: 30px;
+    border: none;
+    background-color: coral;
+    cursor: pointer;
+    transition: .3s;
+} 
+
+button:hover{
+transform: scale(1.1);
+}

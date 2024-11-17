@@ -1,0 +1,29 @@
+<form [formGroup]="employeeForm">
+  <h1 style="font-family: 'Montserrat'">Edit Details</h1>
+  <ng-template matStepLabel>Edit Details</ng-template>
+  <mat-form-field>
+    <mat-label>Name</mat-label>
+    <input
+      matInput
+      placeholder="Employee Name"
+      name="name"
+      formControlName="name"
+      required
+    />
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Name</mat-label>
+    <input matInput placeholder="Job Title" formControlName="post" required />
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Attendance</mat-label>
+    <mat-select name="attendance" formControlName="attendance">
+      <mat-option *ngFor="let att of attendance" [value]="att.value">
+        {{ att.viewValue }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+  <div style="text-align: right">
+    <button mat-button (click)="edit(employee.id)">Edit</button>
+  </div>
+</form>

@@ -1,0 +1,49 @@
+.row{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    gap:20px;
+    margin-top: 20px;
+}
+header{
+    width: 100%;
+    margin:10px;
+    display: flex;
+    flex-direction: row;
+}
+.tableContainer{
+    height: 60vh;
+    overflow-y: auto;
+    table{
+        width: 50vw;
+        thead{
+            tr{
+                th{
+                    position: sticky;
+                    top: 0; 
+                    padding: 10px;
+                    font-size: 20px;
+                    color:rgb(255, 255, 255);
+                    background-color: rgb(48, 47, 47);
+                    z-index: 9999;
+                }
+                background-color: rgb(48, 47, 47);
+            }
+        }
+        tbody{
+    
+            tr{
+                td{
+                    padding: 10px;
+                    font-size: 16px;
+                    color:rgb(53, 53, 53);
+                    text-align: center;
+                }
+                background-color: rgb(237, 237, 237);
+            }
+            tr:hover{
+                background-color: rgb(255, 250, 227);
+            }
+        }
+    }
+}

@@ -1,0 +1,426 @@
+@import url('https://fonts.googleapis.com/css2?family=Alexandria&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+
+/* NEW LAYOUT */
+
+.grid{
+    /* border: 2px solid black; */
+    width: 100%;
+}
+
+.row-1{
+    /* border: 2px solid red; */
+    width: 95%;
+    height: 25%;
+    display: flex;
+    margin: 20px;
+    /* padding: 10px; */
+}
+
+.row-1 .col-1{
+    /* border: 2px solid black; */
+    height: 100%;
+    width: 30%;
+    text-align: center;
+    font-size: 30px;
+    margin-right: 10px;
+    /* padding: 10px; */
+    /* border: 1px solid blue; */
+    border-radius: 12px;
+    box-shadow: -4px -4px 19px rgb(48 66 84 / 15%);
+}
+
+/* chart */
+
+.row-1 .col-1 .first-chart{
+    /* border: 2px solid red; */
+}
+
+.row-1 .col-1 .first-chart .chart{
+}
+
+.row-1 .col-1 .first-chart .target{
+    font-size: 24px;
+    font-family: 'Montserrat';
+}
+
+
+.row-1 .col-2{
+    /* border: 2px solid black; */
+    height: 90%;
+    width: 70%;
+    text-align: center;
+    font-size: 30px;
+    margin-left: 10px;
+    box-shadow: -4px -4px 19px rgb(48 66 84 / 15%);
+    padding: 4px 10px;
+    border-radius: 12px;
+}
+
+
+
+.row-1 .col-2 header{
+    /* border: 1px solid blue; */
+    padding-top: 0;
+    margin: 0;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid rgba(201, 195, 195, 0.881);
+}
+
+.row-1 .col-2 header h1{
+    font-size: 16px;
+    font-family: 'Montserrat';
+    /* margin-top: 5px; */
+    /* margin-left: 10px; */
+    margin: 0 10px;
+    /* border: 1px solid red; */
+    padding-top: 3px;
+}
+
+.row-1 .col-2 header .icon{
+    font-size: 30px;
+    /* margin-top: 15px; */
+    margin-right: 5px;
+    cursor: pointer;
+    /* border: 1px solid black; */
+    padding: 0;
+
+}
+
+.row-1 .col-2 .data{
+    max-height: 120px;
+    overflow-y: scroll;
+    /* padding-top: 10px; */
+    font-size: 13px;
+    font-family: 'Montserrat';
+    text-align: left;
+    /* border: 2px solid orangered; */
+}
+
+
+.row-1 .col-2 .data p{
+    cursor: pointer;
+    padding-left: 10px;
+}
+
+.row-1 .col-2 .data p:hover{
+    border-left: 4px solid orange;
+}
+
+.row-1 .col-2 table{
+    width: 100%;
+}
+
+.row-1 .col-2 table th{
+    border-bottom: 1px solid #969696;
+    text-align: left;
+    font-size: 13px;
+    font-family: 'Montserrat';
+}
+
+.row-1 .col-2 table tr td{
+    font-size: 10px;
+    font-family: 'Montserrat';
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+.row-2{
+    /* border: 2px solid blue; */
+    width: 100%;
+    height: 25%; 
+    display: flex;   
+    margin: 20px;
+    width: 95%;
+}
+
+.row-2 .col-1{
+    /* border: 2px solid black; */
+    height: 100%;
+    width: 34%;
+    text-align: center;
+    font-size: 30px;
+    margin-right: 10px;
+    box-shadow: -4px -4px 19px rgb(48 66 84 / 15%);
+    border-radius: 12px;
+    /* padding: 10px; */
+}
+
+.row-2 .col-1 .first-chart{
+    /* border: 2px solid red; */
+    width: 100%;
+}
+
+.row-2 .col-1 .first-chart .chart{
+    box-shadow: -4px -4px 19px rgb(48 66 84 / 15%);
+}
+
+.row-2 .col-1 .first-chart .target{
+    font-size: 24px;
+    font-family: 'Montserrat';
+}
+
+
+
+
+.row-2 .col-1 .chart1{
+    /* border: 2px solid red; */
+    padding: 10px;
+}
+
+
+.row-2 .col-2{
+    /* border: 2px solid blueviolet; */
+    height: 90%;
+    width: 80%;
+    text-align: center;
+    font-size: 30px;
+    margin-left: 10px;
+    box-shadow: -4px -4px 19px rgb(48 66 84 / 15%);
+    padding: 10px;
+    border-radius: 12px;
+    
+}
+
+.row-2 .col-2 header{
+    /* border: 1px solid red; */
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid rgba(201, 195, 195, 0.881);
+    padding: 0;
+}
+
+.row-2 .col-2 header h1{
+    font-size: 16px;
+    font-family: 'Montserrat';
+    /* margin-top: 5px; */
+    margin-left: 10px;
+    padding: 0;
+    margin: 0 10px;
+}
+
+.row-2 .col-2 header .icon{
+    font-size: 30px;
+    /* margin-top: 15px; */
+    margin-right: 5px;
+    cursor: pointer;
+    /* border: 1px solid brown; */
+    /* padding-bottom: 5px; */
+}
+
+.row-2 .col-2 .data{
+    max-height: 150px;
+    overflow-y: scroll;
+    padding-top: 10px;
+    font-size: 13px;
+    font-family: 'Montserrat';
+}
+
+.row-2 .col-2 .data p{
+    cursor: pointer;
+    padding-left: 10px;
+}
+
+.row-2 .col-2 .data p:hover{
+    border-left: 4px solid orange;
+}
+
+.row-2 .col-2 table tr td i:hover{
+    background-color: #cac3c3;
+}
+
+
+.row-3{
+    /* border: 2px solid black; */
+    height: 40%;
+    margin: 20px;
+    /* margin: 20px; */
+    /* text-align: center; */
+    /* font-size: 30px; */
+    width: 95%;
+    box-shadow: -4px -4px 19px rgb(48 66 84 / 15%);
+    padding: 0 10px;
+    border-radius: 12px;
+}
+
+.row-3 .header{
+    /* border: 2px solid red;  */
+    width: 100%;
+    display: flex;
+    border-bottom: 2px solid grey;
+    padding: 5px 0;
+}
+
+.row-3 .header .number{
+    /* border: 3px solid blue;     */
+    border-right: 2px solid grey;
+    width: 92%;
+    font-size: 20px;
+    font-family: 'Montserrat';
+    display: flex;
+    justify-content: space-between;
+    margin-right: 2px;
+    padding-right: 5px;
+}
+
+.row-3 .header .number p{
+    margin: 6px 20px;
+}
+
+.row-3 .header .number .search{
+    /* border: 1px solid red; */
+    display: flex;
+    padding: 0 6px;
+    border-radius: 6px;
+    background-color: rgba(234, 226, 226, 0.881);
+}
+
+.row-3 .header .number .search i{
+    margin-top: 2px;
+    cursor: pointer;
+}
+
+.row-3 .header .number .search input{
+    /* padding: 3px; */
+    outline: none   ;
+    border: none;
+    background-color: rgba(234, 226, 226, 0.881);
+    margin-left: 5px;
+}
+
+.row-3 .header .add{
+    /* border: 3px solid green;    */
+    width: 8%; 
+    /* padding-top: 10px;
+    padding-bottom: 10px; */
+    padding-right: 20px;
+    padding-top: 5px;
+    font-size: 20px;
+}
+
+.row-3 .header .add i{
+    /* border-left: 1px solid grey; */
+    padding: 4px;
+    cursor: pointer;
+    border-radius: 5px;
+    box-shadow: -4px -4px 19px rgb(48 66 84 / 15%);
+    margin-top: 5px;
+}
+
+.row-3 .header .add i:hover{
+    background-color: rgba(234, 226, 226, 0.881);
+}
+
+.row-3 .data{
+    max-height: 220px;
+    overflow-y: scroll;
+    /* border: 2px solid red; */
+    width: 100%;
+}
+
+.row-3 .data table{
+    width: 100%;
+}
+
+.row-3 .data table th{
+    /* border: 2px solid black; */
+    /* width: 100%; */
+    border-bottom: 1px solid #969696;
+    padding: 0.5em;
+    text-align: left;
+    font-size: 16px;
+    font-family: 'Montserrat';
+}
+
+.row-3 .data table tr td{
+    padding: 0.1em 0 0.1em 0.7em;
+    border-bottom: 1px solid #969696;
+    font-size: 12px;
+    font-family: 'Montserrat';
+}
+
+.row-3 .data table tr td i{
+    margin-right: 4px; 
+    padding: 3px; 
+    border-radius: 6px; 
+    cursor: pointer; 
+    /* color: blue;  */
+    background-color: #e2e2e2
+}
+
+.row-3 .data table tr td i:hover{
+    background-color: #cac3c3;
+}
+
+.col-2 table th{ 
+    /* border: 2px solid black; */
+    /* width: 100%; */
+    border-bottom: 1px solid #969696;
+    padding: 0.5em;
+    text-align: left;
+    font-size: 16px;
+    font-family: 'Montserrat';
+}
+
+.col-2 table tr td{
+    padding: 0.1em 0 0.1em 0.7em;
+    border-bottom: 1px solid #969696;
+    font-size: 12px;
+    font-family: 'Montserrat';
+    text-align: left;
+}
+
+.col-2 table tr td i{
+    margin-right: 4px; 
+    padding: 3px; 
+    border-radius: 6px; 
+    cursor: pointer; 
+    /* color: blue;  */
+    background-color: #e2e2e2
+}
+
+/* i:hover{
+    background-color: #ffb120;
+    transform: scale(1.1);
+} */
+ 
+
+.Present{
+    background-color: rgb(115, 255, 115);
+    color:rgb(63, 63, 63);
+    width: 60px; 
+    text-align:center; 
+    border-radius: 3px;
+}
+
+.Absent{
+    background-color: red;
+    color:rgb(255, 255, 255);
+    width: 60px; 
+    text-align:center; 
+    border-radius: 3px;
+}
+
+.orange-icon{
+    color: orange;
+}
+
+.red-icon{
+    color: red;
+}
+
+.blue-icon{
+    color: blue3;
+}

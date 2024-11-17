@@ -1,0 +1,207 @@
+<div class="grid">
+  <div class="row-1">
+    <div class="col-1">
+      <!-- chart 1  -->
+      <div class="first-chart">
+        <div class="chart">
+          <!-- <div class="target">Total Visits</div> -->
+          <div class="chart1">
+            <div
+              style="height: 175px; text-align: center; justify-content: center"
+            >
+              <canvas
+                baseChart
+                [data]="barChartData"
+                [options]="barChartOptions"
+                [plugins]="barChartPlugins"
+                [type]="barChartType"
+                (chartHover)="chartHovered($event)"
+                (chartClick)="chartClicked($event)"
+                style="display: inline"
+              >
+                [plugins]="pieChartPlugins"
+              </canvas>
+            </div>
+            <!-- <button type="button" mat-button style="background-color: orange;" (click)="randomize()">Update</button> -->
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-2">
+      <header>
+        <h1>Customers List</h1>
+        <div class="icon">
+          <button mat-icon-button class="orange-icon" (click)="addCustomer()">
+            <mat-icon>add_circle</mat-icon>
+          </button>
+        </div>
+      </header>
+      <div class="data">
+        <table>
+          <tr>
+            <th *ngFor="let heading of headings">{{ heading }}</th>
+          </tr>
+          <tr
+            *ngFor="let data of customersData; let i = index"
+            style="width: 100%"
+          >
+            <td style="width: 5%">{{ i + 1 }}</td>
+            <td style="width: 60%">{{ data.name }}</td>
+            <td style="width: 15%">{{ data.contact }}</td>
+            <td style="font-size: 20px; width: 15%; padding-left: 0">
+              <button
+                mat-icon-button
+                class="blue-icon"
+                (click)="updateCustomer(data)"
+              >
+                <mat-icon>edit</mat-icon>
+              </button>
+              <button
+                mat-icon-button
+                class="red-icon"
+                (click)="deleteCustomer(data.id)"
+              >
+                <mat-icon>delete</mat-icon>
+              </button>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <div class="row-2">
+    <div class="col-1">
+      <!-- chart 1  -->
+      <div class="first-chart">
+        <div class="chart">
+          <div class="chart1">
+            <div
+              style="height: 150px; text-align: center; justify-content: center"
+            >
+              <canvas
+                baseChart
+                [data]="barChartData2"
+                [options]="barChartOptions2"
+                [plugins]="barChartPlugins2"
+                [type]="barChartType2"
+                (chartHover)="chartHovered2($event)"
+                (chartClick)="chartClicked2($event)"
+                style="display: inline"
+              >
+                [plugins]="pieChartPlugins"
+              </canvas>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-2">
+      <header>
+        <h1>Services Available</h1>
+        <div class="icon">
+          <!-- <i class="ri-add-circle-fill" style="color: orange;" (click)="addServices()"></i> -->
+          <button mat-icon-button class="orange-icon" (click)="addServices()">
+            <mat-icon>add_circle</mat-icon>
+          </button>
+        </div>
+      </header>
+      <div class="data">
+        <table>
+          <tr>
+            <th *ngFor="let head of header">{{ head }}</th>
+          </tr>
+          <tr
+            *ngFor="let service of servicesData; let i = index"
+            style="width: 100%"
+          >
+            <td style="width: 5%">{{ i + 1 }}</td>
+            <td style="width: 60%">{{ service.name }}</td>
+            <td style="width: 60%">{{ service.price }}</td>
+            <td style="width: 60%">{{ service.description }}</td>
+            <td style="font-size: 20px; width: 15%; padding-left: 0">
+              <!-- <i class="ri-pencil-line" style="color: blue;" (click)="updateService(service)"></i>
+                            <i class="ri-delete-bin-5-fill" style="color: red;"
+                                (click)="deleteService(service.id)"></i> -->
+              <button
+                mat-icon-button
+                class="blue-icon"
+                (click)="updateService(service)"
+              >
+                <mat-icon>edit</mat-icon>
+              </button>
+              <button
+                mat-icon-button
+                class="red-icon"
+                (click)="deleteService(service.id)"
+              >
+                <mat-icon>delete</mat-icon>
+              </button>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <div class="row-3">
+    <div class="header">
+      <div class="number">
+        <p>Employee Details</p>
+        <div class="search">
+          <i class="ri-user-search-line"></i>
+          <input type="text" style="outline: none" />
+        </div>
+      </div>
+      <div class="add">
+        <i class="ri-download-2-line"></i>
+        <i class="ri-printer-line"></i>
+        <i class="ri-add-circle-fill" (click)="addEmployee()"></i>
+      </div>
+    </div>
+    <div class="data">
+      <table>
+        <thead>
+          <tr>
+            <th *ngFor="let header of headers">
+              {{ header }}
+            </th>
+          </tr>
+        </thead>
+
+        <tr
+          *ngFor="let employee of employeeData; let i = index"
+          style="width: 100%"
+        >
+          <td style="width: 5%">{{ i + 1 }}</td>
+          <td style="width: 50%">{{ employee.name }}</td>
+          <td style="width: 15%">{{ employee.post }}</td>
+          <td style="width: 15%">
+            <p [class]="employee.attendance">
+              {{ employee.attendance }}
+            </p>
+          </td>
+          <td style="font-size: 20px; width: 10%; padding-left: 0">
+            <!-- <i class="ri-pencil-line" style="color: blue;" (click)="updateEmployee(employee)"></i>
+                        <i class="ri-delete-bin-5-fill" style="color: red;"
+                            (click)="deleteEmployee(employee.id)"></i> -->
+            <button
+              mat-icon-button
+              class="blue-icon"
+              (click)="updateEmployee(employee)"
+            >
+              <mat-icon>edit</mat-icon>
+            </button>
+            <button
+              mat-icon-button
+              class="red-icon"
+              (click)="deleteEmployee(employee.id)"
+            >
+              <mat-icon>delete</mat-icon>
+            </button>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</div>

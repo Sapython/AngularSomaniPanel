@@ -1,0 +1,222 @@
+@import url('https://fonts.googleapis.com/css2?family=PT+Sans:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Acme&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Acme&family=Didact+Gothic&display=swap');
+.main-container{
+    display: flex;
+    width: 100%;
+    user-select: none;
+    height: 100%;
+}
+
+.main-container .logo-section{
+    width: 55%;
+    background-color: #2F1A00;
+    height: 100%;
+    margin: 0;
+} 
+ 
+.main-container .logo-section .logo{
+    text-align: center;
+    margin-top: 50px;
+    margin-left: 100px;
+}
+
+.login-section{ 
+    width: 45%;
+} 
+
+.login-section .login{
+    margin: auto;
+    margin-top: 140px;
+    width: 347px;
+}
+
+.login .welcome{
+    font-size: 16px;
+    font-family: 'PT Sans', sans-serif;
+    
+    
+    
+    /* color: #0000;
+    -webkit-text-stroke: 0.1vh #0000; */
+}
+
+.login .heading{
+    font-size: 28px;
+    /* font-family: 'Acme', sans-serif; */
+    font-family: 'Didact Gothic', sans-serif;
+    font-weight: bolder;
+    margin: 5px 0;
+    padding-top: 2px;
+
+}
+/* 
+.login .welcome::before{
+    content: attr(data-text);
+    position: absolute;
+    height: 3%;    
+    color: black;
+    -webkit-text-stroke: vh #fff;
+    border-right: 4px solid black;
+    overflow: hidden;
+    animation: animate 5s linear infinite;
+}
+
+@keyframes animate
+{
+    0%,5%,50%{
+        width: 0;
+    }
+    35%,45%{
+        width: 70px;
+    }
+} */
+
+
+.login .login-form{
+    margin-top: 16px
+}
+
+.login-form label{
+    font-size: 12px;
+}
+
+
+.login .login-form .form-field{
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-top: 4px;
+    margin-bottom: 16px;
+    resize: vertical;
+    font-family: 'Roboto';
+}
+
+.login .check-btn{
+    display: flex;
+    justify-content: space-between;
+}
+
+.login .check-btn .checkbox{
+    cursor: pointer;
+    font-family: 'Roboto';
+    font-size: 14px;
+    user-select: none;
+}
+
+.login .check-btn .forget{
+    color: #2C5282;
+    cursor: pointer;
+    font-family: 'Roboto';
+}
+
+.login .buttons{
+    margin-top: 20px;
+    font-family: 'Roboto';
+}
+
+/* .login .buttons .login-now{
+    width: 347px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color: orange;
+    color: white;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 5px;
+    user-select: none;
+}
+
+.login .buttons .login-google{
+    margin-top: 10px;
+    width: 100%;
+    padding-top: 7px;
+    padding-bottom: 7px;
+    display: flex;
+    background-color: black;
+    cursor: pointer;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    border-radius: 5px;
+}
+
+.login .buttons .login-google .google-logo{
+    height: 35px;
+    width: 45px;
+}
+
+.login .buttons .login-google .google-text{
+    color: white;
+}
+
+
+.login .buttons .login-google .google-logo .google-signin{
+    padding-top: 15px;
+} */
+
+.main-container .login-section .join{
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 14px;
+    font-family: 'Roboto';
+    margin-top: 10px;
+}
+
+
+
+
+
+
+
+.example-container mat-form-field + mat-form-field {
+    margin-left: 8px;
+    width: 100%;
+  }
+  
+  .example-right-align {
+    text-align: right;
+    width: 100%;
+  }
+  
+  input.example-right-align::-webkit-outer-spin-button,
+  input.example-right-align::-webkit-inner-spin-button {
+    display: none;
+    
+  }
+  
+  input.example-right-align {
+    -moz-appearance: textfield;
+  }
+  
+  .login_btn{
+    color: #fff;
+    background-color: orange;
+    width: 100%;
+  }
+
+  .google-login{
+    display: flex;
+    width: 100%; 
+    margin-top: 10px;
+    justify-content: center;
+    /* border: 1px solid black; */
+  }
+
+  .google-login img{
+    /* border: 1px solid ; */
+    width: 100%;
+  }
+
+  .google-login p{
+    /* border: 1px solid blue; */
+  }
+
+  .logo{
+    height: 40px;
+    width: 55px;
+  }
+  

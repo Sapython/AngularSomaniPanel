@@ -1,0 +1,108 @@
+<form [formGroup]="appointment">
+
+  <mat-stepper [linear]="isLinear" #stepper>
+
+    <!-- name Field -->
+    <mat-step>
+      <ng-template matStepLabel>Name</ng-template>
+      <mat-form-field appearance="fill">
+        <mat-label>Name</mat-label>
+        <input matInput placeholder="Last name, First name" name="name" formControlName="name" required>
+      </mat-form-field>
+      <div>
+        <button type="button" mat-button matStepperNext>Next</button>
+      </div>
+    </mat-step>
+
+
+    <!-- email Field -->
+    <mat-step>
+      <ng-template matStepLabel>Email</ng-template>
+      <mat-form-field appearance="fill">
+        <mat-label>Email</mat-label>
+        <input matInput placeholder="Enter Customer Email" name="email" formControlName="email" required>
+      </mat-form-field>
+      <div>
+        <button type="button" mat-button matStepperPrevious>Back</button>
+        <button type="button" mat-button matStepperNext>Next</button>
+      </div>
+    </mat-step>
+
+
+    <!-- services Field  -->
+    <mat-step label="Service" label="Service">
+      <mat-form-field appearance="fill">
+        <mat-label>Service</mat-label>
+        <mat-select name="services" formControlName="services">
+          <mat-option *ngFor="let service of services" [value]="service.value">
+            {{service.viewValue}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+      <div>
+        <button type="button" mat-button matStepperPrevious>Back</button>
+        <button type="button" mat-button matStepperNext>Next</button>
+      </div>
+    </mat-step>
+
+
+    <!-- transaction ID field -->
+    <mat-step label="transaction_id">
+      <!-- <mat-form-field appearance="fill">
+        <mat-label>Transaction ID</mat-label>
+        <mat-select name="transaction_id" formControlName="transaction_id">
+          <mat-option *ngFor="let stylist of stylists" [value]="stylist.value">
+            {{stylist.viewValue}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field> -->
+      <ng-template matStepLabel>Transaction ID</ng-template>
+      <mat-form-field appearance="fill">
+        <mat-label>Transaction Id</mat-label>
+        <input matInput placeholder="Enter Transaction Id" name="transaction_id" formControlName="transaction_id" required>
+      </mat-form-field>
+ 
+      <div>
+        <button type="button" mat-button matStepperPrevious>Back</button>
+        <button type="button" mat-button matStepperNext>Next</button>
+      </div>
+    </mat-step>
+
+
+    <!-- amount field -->
+    <mat-step label="Stylist">
+      <!-- <mat-form-field appearance="fill">
+        <mat-label>Amount</mat-label>
+        <mat-select name="amount" formControlName="amount">
+          <mat-option *ngFor="let stylist of stylists" [value]="stylist.value">
+            {{stylist.viewValue}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field> -->
+
+      <ng-template matStepLabel>Amount</ng-template>
+      <mat-form-field appearance="fill">
+        <mat-label>Amount</mat-label>
+        <input matInput placeholder="Enter Amount" name="amount" formControlName="amount" required>
+      </mat-form-field>
+
+      <div>
+        <button type="button" mat-button matStepperPrevious>Back</button>
+        <button type="button" mat-button matStepperNext>Next</button>
+      </div>
+    </mat-step>
+ 
+
+ 
+    <!-- final page field  -->
+    <mat-step>
+      <ng-template matStepLabel>Done</ng-template>
+      <p>Submit to book the Appointment.</p>
+      <div>
+        <button type="button" mat-button matStepperPrevious>Back</button>
+        <button type="button" mat-button (click)="stepper.reset()">Reset</button>
+        <button mat-button (click)="submit()">Submit</button>
+      </div>
+    </mat-step>
+  </mat-stepper>
+</form>

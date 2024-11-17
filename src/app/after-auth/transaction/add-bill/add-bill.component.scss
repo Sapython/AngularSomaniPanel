@@ -1,0 +1,150 @@
+section {
+    max-height: 70vh;
+    overflow-y: hidden;
+    // width: 70vw;
+}
+
+form {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    grid-gap: 30px;
+
+    .customerInfo {
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+
+    .biller {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+
+        .row {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 2fr;
+            grid-gap: 20px;
+            max-height: 50px;
+        }
+
+        .tableWrapper {
+            height: 60vh;
+            overflow-y: auto;
+
+            table {
+                width: 100%;
+
+                thead {
+                    tr {
+
+                        background-color: #323232;
+                        color: white;
+
+                        td {
+                            font-size: 19px;
+                            padding: 10px;
+                            font-size: 19px;
+                        }
+                    }
+                }
+
+                tbody {
+                    tr {
+                        background-color: rgb(241, 244, 244);
+
+                        td {
+                            padding: 15px;
+                            font-size: 16px;
+
+                            input {
+                                border: none;
+                                outline: none;
+                                width: 100px;
+                                border-radius: 7px;
+                                font-size: 17px;
+                                padding: 7px;
+                            }
+
+                            input:hover,
+                            input:focus {
+                                background-color: rgb(255, 248, 235);
+                            }
+                        }
+                    }
+
+                    tr:hover {
+                        background-color: whitesmoke;
+                    }
+
+                }
+            }
+        }
+
+        .finals {
+            position: relative;
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-end;
+            max-height: 50px;
+            padding: 10px;
+            gap:15px;
+            background: rgb(240, 240, 240);
+            input,mat-select {
+                border: 2px solid #323232;
+                outline: none;
+                width: 150px;
+                border-radius: 7px;
+                font-size: 17px;
+                padding: 7px;
+                background: white;
+            }
+        }
+    }
+}
+
+#billMain {
+    visibility: hidden;
+    border: 2px solid;
+    max-width: 250px;
+    padding: 15px;
+
+    p {
+        margin: 0px;
+    }
+
+    img {
+        width: 150px;
+        height: auto;
+        display: block;
+        margin: 0 auto;
+    }
+
+    .billRow {
+        display: flex;
+        grid-gap: 20px;
+        flex-wrap: nowrap;
+    }
+
+    .subFinal {
+        display: grid;
+        grid-template-columns: 3fr 1fr;
+        grid-gap: 20px;
+    }
+
+    .info {
+        display: block;
+        margin: 0 auto;
+        text-align: center;
+    }
+
+    table {
+        width: 100%;
+    }
+}
+
+.buttonRow {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    gap: 20px;
+    margin-top: 20px;
+}

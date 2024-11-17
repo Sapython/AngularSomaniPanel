@@ -1,0 +1,56 @@
+<div class="container2">
+  <div class="btnbtn">
+    <!-- <div class="plus-btn">
+      <button  (click)="openDialog()">+</button>
+    </div> -->
+    <div class="icon">
+      <button mat-icon-button class="orange-icon" (click)="openDialog()">
+        <mat-icon>add_circle</mat-icon>
+      </button>
+    </div>
+  </div>
+  <section>
+    <div class="heading">
+      <h2>Customers</h2>
+    </div>
+
+    <table>
+      <table>
+        <!-- header -->
+        <thead>
+          <tr>
+            <th *ngFor="let header of headers">
+              {{ header }}
+            </th>
+          </tr>
+        </thead>
+
+        <!-- table content -->
+        <tr
+          *ngFor="let data of customersData; let i = index"
+          style="width: 100%"
+        >
+          <td style="width: 5%">{{ i + 1 }}</td>
+          <td style="width: 60%">{{ data.name }}</td>
+          <td style="width: 15%">{{ data.contact }}</td>
+          <td style="font-size: 20px; width: 15%; padding-left: 0">
+            <button
+              mat-icon-button
+              class="blue-icon"
+              (click)="updateCustomer(data)"
+            >
+              <mat-icon>edit</mat-icon>
+            </button>
+            <button
+              mat-icon-button
+              class="red-icon"
+              (click)="deleteCustomer(data.id)"
+            >
+              <mat-icon>delete</mat-icon>
+            </button>
+          </td>
+        </tr>
+      </table>
+    </table>
+  </section>
+</div>

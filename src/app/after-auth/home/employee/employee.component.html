@@ -1,0 +1,26 @@
+<form [formGroup]="employee">
+
+    <div>
+        <h1 style="font-family: 'Montserrat';">Enter Details</h1>
+        <mat-form-field>
+          <mat-label>Name</mat-label>
+          <input matInput placeholder="Employee Name" formControlName="name" required>
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label>Name</mat-label>
+          <input matInput placeholder="Job Title" formControlName="post" required>
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>Attendance</mat-label>
+            <mat-select name="attendance" formControlName="attendance">
+              <mat-option *ngFor="let att of attendance" [value]="att.value">
+                {{att.viewValue}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+          <div style="text-align: right;">
+            <button type="button" mat-button (click)= "reset()">Reset</button>
+            <button mat-button (click)="submit()">Submit</button>
+          </div>
+    </div>
+  </form>

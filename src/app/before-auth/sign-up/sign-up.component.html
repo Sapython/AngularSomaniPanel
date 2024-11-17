@@ -1,0 +1,95 @@
+<div class="main-container">
+
+    <!-- LOGO SECTION 1 -->
+    <div class="logo-section">
+        <div class="logo">
+            <img src="assets/img/21.png">
+        </div>
+    </div> 
+     
+    
+    <!-- LOGIN CREDENTIALS SECTION 2 --> 
+    <div class="login-section">
+        <div class="login">
+     
+            <!-- <div class="greeting"> -->
+                <!-- MORNING -->
+                <!-- <h2 *ngIf = "time<12">Good Morning,</h2> -->
+
+                <!-- AFTERNOON -->
+                <!-- <h2 *ngIf = "time>=12">Good Afternoon,</h2> -->
+
+                <!-- EVENING -->
+                <!-- <h2 *ngIf = "time>17">Good Evening,</h2> -->
+            <!-- </div> -->
+
+            <!-- 1 -->
+            <div class="heading">Sign up</div>
+    
+     
+    
+            <!-- 2 -->
+            <div class="login-form">
+                <form [formGroup] = "loginForm"> 
+                    <div class="example-container">
+                        <mat-form-field appearance="outline" style="width: 100%;">
+                          <mat-label>Enter your name</mat-label>
+                          <input matInput placeholder="" formControlName = "name" required>
+                        </mat-form-field>
+                      </div>
+
+                    <!-- <label for="email" style="font-family: 'Roboto'; font-size: 16px;">Email</label>
+                    <input type="text" name="email" class ="form-field" placeholder="Enter your email" formControlName = "email" style="font-family: 'Roboto'; font-size: 14px;">    -->
+                    <div class="example-container">
+                        <mat-form-field appearance="outline" style="width: 100%;">
+                          <mat-label>Enter your email</mat-label>
+                          <input matInput placeholder="" formControlName = "email" required>
+                        </mat-form-field>
+                      </div>
+    
+                    <!-- <label for="password" style="font-family: 'Roboto'; font-size: 16px;">Password</label>
+                    <input type="password" name="password" class ="form-field" placeholder="Enter your Password" formControlName="password" style="font-family: 'Roboto'; font-size: 14px;"> -->
+                    <div class="example-container">
+                        <mat-form-field appearance="outline" style="width: 100%;">
+                          <mat-label>Enter your password</mat-label>
+                          <input matInput [type]="hide ? 'password' : 'text'" formControlName="password">
+                          <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                            <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                          </button>
+                        </mat-form-field>
+                    </div>
+                </form>     
+            </div>
+    
+    
+    
+            <!-- 3 -->
+            <div class="buttons">
+                <!-- row 1 -->
+                <!-- <div class="signup-now"  (click) = "register()">Sign up</div> -->
+                <button mat-raised-button (click) = "register()" class="signup_btn">Sign up</button>
+                <!-- row 2 -->
+                <!-- <div class="login-google"  (click) = "googleSignup()">
+                    <div class="google-logo"><img src="assets/img/logo-google-final.png" class="google-logo"></div>
+                    <div class="google-text">Or sign-up with google</div>
+                </div> -->
+                <button mat-raised-button class="google-login" (click) = "googleSignup()">
+                    <img src="assets/img/logo-1.png" class="logo">
+                    <!-- <p class="google-text">Or sign-in with google</p> -->
+                </button>
+            </div>
+        
+    
+    
+            <!-- 4 -->
+            <div class="join" (click) ="login()">
+                <p>Already have an account?</p> &nbsp;
+                <p style="color: #2B6CB0">Login</p>
+            </div>
+    
+    
+    
+        </div>
+    </div>
+     
+    </div>

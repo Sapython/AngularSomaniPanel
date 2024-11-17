@@ -1,0 +1,49 @@
+<form [formGroup]="servicesForm" (ngSubmit)="submit()">
+  <div class="container">
+    <h1 style="font-family: 'Montserrat'">Enter Details</h1>
+    <mat-form-field>
+      <mat-label>Service</mat-label>
+      <input
+        matInput
+        placeholder="Enter Service Name"
+        formControlName="name"
+        required
+      />
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Price</mat-label>
+      <input
+        matInput
+        placeholder="Enter Service Price"
+        type="number"
+        formControlName="price"
+        required
+      />
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Description</mat-label>
+      <textarea
+        matInput
+        placeholder="Description"
+        formControlName="description"
+        required
+      ></textarea>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Category</mat-label>
+      <mat-select formControlName="category">
+        <mat-option [value]="category.id" *ngFor="let category of categories">
+          {{category.name}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+    <input hidden type="file" #image />
+    <button color="primary" mat-stroked-button (click)="image.click()">Select Image</button>
+    <div style="text-align: right">
+      <button color="warn" type="button" mat-stroked-button (click)="reset()">
+        Reset
+      </button>
+      <button mat-flat-button color="primary" type="submit">Submit</button>
+    </div>
+  </div>
+</form>

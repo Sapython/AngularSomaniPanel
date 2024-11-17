@@ -1,0 +1,21 @@
+{
+  "targets": {
+    "project-somani": {
+      "hosting": {
+        "SOMANI": [
+          "project-somani"
+        ]
+      }
+    },
+    "somanisalon": {
+      "hosting": {
+        "SOMANI": [
+          "somanisalon"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "somanisalon"
+  }
+}

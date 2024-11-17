@@ -1,0 +1,19 @@
+div{
+    display: flex;
+    justify-content: center;
+    gap:20px;
+}
+div.container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 400px;
+}
+
+mat-form-field,form{
+    width: 100%;
+}
+div.container button{
+    width: 100%;
+}

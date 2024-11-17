@@ -1,0 +1,42 @@
+<section>
+  <div class="staff">
+    <div class="top">
+      <h3>Weekly Staff attendance</h3>
+      <div class="plus-btn">
+        <button (click)="openDialog()">+</button>
+      </div>
+    </div>
+    <div class="expand-bar">
+      <table>
+        <thead>
+          <tr>
+            <th *ngFor="let header of headers">
+              {{ header }}
+            </th>
+          </tr>
+        </thead>
+        <tr *ngFor="let staff of staffs">
+          <td>
+            {{ staff.name }}
+          </td>
+          <td>
+            {{ staff.monday }}
+          </td>
+          <td>
+            {{ staff.tuesday }}
+          </td>
+          <td>
+            {{ staff.wednesday }}
+          </td>
+          <td>
+            {{ staff.thursday }}
+          </td>
+
+          <td>
+            {{ staff.friday }}
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</section>

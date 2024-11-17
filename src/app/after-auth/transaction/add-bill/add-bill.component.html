@@ -1,0 +1,259 @@
+<section>
+  <h2>Add Bill</h2>
+  <form
+    [formGroup]="billForm"
+    *ngIf="this.data == undefined || this.data?.mode != 'print'" #form
+  >
+    <div class="customerInfo">
+      <mat-form-field appearance="outline" class="example-full-width">
+        <mat-label>Customer Name</mat-label>
+        <input formControlName="customerName" matInput placeholder="Name" />
+      </mat-form-field>
+      <mat-form-field appearance="outline" class="example-full-width">
+        <mat-label>Customer Email</mat-label>
+        <input formControlName="customerEmail" matInput placeholder="Name" />
+      </mat-form-field>
+      <mat-form-field appearance="outline" class="example-full-width">
+        <mat-label>Customer Phone</mat-label>
+        <input formControlName="customerPhone" matInput placeholder="Name" />
+      </mat-form-field>
+      <mat-form-field appearance="outline" class="example-full-width">
+        <mat-label>Customer Address</mat-label>
+        <input formControlName="customerAddress" matInput placeholder="Name" />
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>Choose a date</mat-label>
+        <input
+          matInput
+          formControlName="appointmentDate"
+          [matDatepicker]="picker"
+        />
+        <mat-hint>MM/DD/YYYY</mat-hint>
+        <mat-datepicker-toggle
+          matIconSuffix
+          [for]="picker"
+        ></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
+      <mat-form-field appearance="outline" class="example-full-width">
+        <mat-label>Note (Optional)</mat-label>
+        <input formControlName="extraNote" matInput placeholder="Note" />
+      </mat-form-field>
+    </div>
+    <div class="biller">
+      <div class="row">
+        <mat-card> Total Amount: {{ finalCost }} </mat-card>
+        <mat-card> Total Quantity: {{ totalQuantity }} </mat-card>
+        <mat-card> Total Discount: {{ totalDiscount }} </mat-card>
+        <button *ngIf="loaded" mat-flat-button color="primary" (click)="selectServices()">
+          Add Services
+        </button>
+      </div>
+      <div class="tableWrapper">
+        <table cellspacing="0">
+          <thead>
+            <tr>
+              <td>Name</td>
+              <td>Category</td>
+              <td>Employee</td>
+              <td>Price</td>
+              <td>Quantity</td>
+              <td>Final</td>
+              <td>Action</td>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let service of addedControls;let i = index;">
+              <td>
+                {{ service.name }}
+              </td>
+              <td>
+                {{ service.category.name }}
+              </td>
+              <td>
+                <mat-form-field appearance="outline">
+                  <mat-label>Employee</mat-label>
+                  <mat-select multiple [formControl]="service.employees">
+                    <mat-option *ngFor="let employee of employees" [value]="employee.id">
+                      {{employee.name}} - {{employee.post}}
+                    </mat-option>
+                  </mat-select>
+                </mat-form-field>                
+              </td>
+              <td>
+                <input
+                  type="number"
+                  
+                  [formControl]="service.control"
+                  placeholder="Price"
+                />
+              </td>
+              <td>
+                <input
+                  type="number"
+                  [formControl]="service.quantityControl"
+                  placeholder="Qty"
+                />
+              </td>
+              <td>
+                {{ service.control.value * service.quantityControl.value }}
+              </td>
+              <td>
+                <button mat-icon-button color="warn" (click)="removeControl(i)"><mat-icon>delete</mat-icon></button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="finals">
+          <mat-select formControlName="discountType" (selectionChange)="dicountControl.reset();dicountControl.setValue(0);this.totalDiscount=0;calculateBill();" #discountType placeholder="Discount Type">
+            <mat-option value="fixed">Fixed</mat-option>
+            <mat-option value="percentage">Percentage</mat-option>
+          </mat-select>
+          <mat-select formControlName="discount" (selectionChange)="calculateBill()" *ngIf="discountType.value=='percentage'" placeholder="Percentage">
+            <mat-option [value]="10">10%</mat-option>
+            <mat-option [value]="15">15%</mat-option>
+            <mat-option [value]="20">20%</mat-option>
+            <mat-option [value]="25">25%</mat-option>
+          </mat-select>
+          <input formControlName="discount" matInput placeholder="Discount" type="number" (input)="calculateBill()" *ngIf="discountType.value=='fixed'" />
+          <input formControlName="tax" matInput type="number" placeholder="Tax" />
+          <button mat-flat-button color="warn" type="button" (click)="close.emit()">
+            Cancel
+          </button>
+          <button
+            mat-flat-button
+            color="primary"
+            (click)="holdBill()"
+            type="button"
+          >
+            Hold Bill
+          </button>
+          <button (click)="saveAndPrint()" mat-flat-button type="submit" color="primary">Save and Print Bill</button>
+        </div>
+      </div>
+    </div>
+  </form>
+
+  <div id="billMain">
+    <img src="assets/img/billLogo.png" alt="" />
+    <hr />
+    <p class="info">19/17-B, Cooper Road, Tashkent Marg</p>
+    <p class="info">Civil Lines, Prayagraj, Uttar Pradesh 211001</p>
+    <p class="info">Hours: 10:30 - 8:00</p>
+    <p class="info">Phone: +917985506226</p>
+    <p class="info">Phone: +917800055512</p>
+    <hr />
+    <div class="billRow">
+      <p>GST No</p>
+      <p>{{ gstNo | uppercase }}</p>
+    </div>
+    <div class="billRow">
+      <p>Date: {{ today | date : "shortDate" }}</p>
+      <p>Time: {{ today | date : "shortTime" }}</p>
+    </div>
+    <!-- <div class="billRow">
+      <p>Bill No</p>
+      <p>{{ billNo }}</p>
+    </div> -->
+    <ng-container *ngIf="this.billForm.value.extraNote">
+      <hr />
+      <p>Note: {{ this.billForm.value.extraNote }}</p>
+    </ng-container>
+    <hr
+      *ngIf="
+        billForm.value.customerName ||
+        billForm.value.customerEmail ||
+        billForm.value.customerPhone ||
+        billForm.value.customerAddress
+      "
+    />
+    <h3
+      *ngIf="
+        billForm.value.customerName ||
+        billForm.value.customerEmail ||
+        billForm.value.customerPhone ||
+        billForm.value.customerAddress
+      "
+    >
+      Customer Info
+    </h3>
+    <div class="billRow" *ngIf="billForm.value.customerName">
+      <p>Name</p>
+      <p>{{ billForm.value.customerName }}</p>
+    </div>
+    <div class="billRow" *ngIf="billForm.value.customerEmail">
+      <p>Email</p>
+      <p>{{ billForm.value.customerEmail }}</p>
+    </div>
+    <div class="billRow" *ngIf="billForm.value.customerPhone">
+      <p>Phone</p>
+      <p>{{ billForm.value.customerPhone }}</p>
+    </div>
+    <div class="billRow" *ngIf="billForm.value.customerAddress">
+      <p>Address</p>
+      <p>{{ billForm.value.customerAddress }}</p>
+    </div>
+    <div class="billRow" *ngIf="billForm.value.appointmentDate">
+      <p>Appointment</p>
+      <p>{{ getDate(billForm.value.appointmentDate) | date }}</p>
+    </div>
+    <hr />
+    <div class="billRow" *ngIf="billForm.value.stylist">
+      <p>Stylist</p>
+      <p>{{ billForm.value.stylist.name }}</p>
+    </div>
+    <hr />
+    <table>
+      <tr>
+        <th style="text-align: left">Item</th>
+        <th>Amt</th>
+        <th>Qty</th>
+        <th>Fnl</th>
+      </tr>
+      <tr *ngFor="let item of addedControls">
+        <td>{{ item.category.name }}</td>
+        <td style="text-align: center">{{ item.control.value }}</td>
+        <td style="text-align: center">{{ item.quantityControl.value }}</td>
+        <td style="text-align: center">
+          &#8377;{{ item.deductedPrice * item.quantityControl.value }}
+        </td>
+      </tr>
+      <tr><td colspan="3">Total</td><td> &#8377;{{subtotal}}</td></tr>
+      <tr><td>{{this.billForm.value.discountType}}</td></tr>
+      <tr><td>{{totalDiscount}}</td></tr>
+      <ng-container *ngIf="this.billForm.value.discountType=='fixed'">
+        <tr *ngIf="totalDiscount > 0"><td colspan="2">Discount</td><td> -&#8377;{{totalDiscount}}</td></tr>
+      </ng-container>
+      <ng-container *ngIf="this.billForm.value.discountType=='percentage'">
+        <tr *ngIf="totalDiscount > 0"><td colspan="2">Discount</td><td>-{{this.billForm.value.discount}}%</td><td> -&#8377;{{totalDiscount}}</td></tr>
+      </ng-container>
+    </table>
+    <hr />
+    <div class="billRow">
+      <span>CGST</span>
+      <span>{{ totalCGST }}%</span>
+      <span>&#8377;{{ totalCGSTCost }}</span>
+    </div>
+    <div class="billRow">
+      <span>SGST</span>
+      <span>{{ totalCGST }}%</span>
+      <span>&#8377;{{ totalCGSTCost }}</span>
+    </div>
+    <div class="billRow subFinal" *ngIf="totalDiscount">
+      <p>Discount</p>
+      <p>&#8377;{{ totalDiscount }}</p>
+    </div>
+    <hr />
+    <div class="billRow final">
+      <p>Grand Total</p>
+      <p>&#8377;{{ finalCost }}</p>
+    </div>
+    <p>*GST is included in the prices.</p>
+    <p *ngIf="billForm.value.appointmentDate">
+      Advance money is not refundable
+    </p>
+    <br />
+    <hr />
+    <h3 class="textCenter">Thank You</h3>
+  </div>
+</section>

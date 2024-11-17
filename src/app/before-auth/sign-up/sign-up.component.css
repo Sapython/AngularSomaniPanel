@@ -1,0 +1,189 @@
+@import url('https://fonts.googleapis.com/css2?family=PT+Sans:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Acme&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Acme&family=Didact+Gothic&display=swap');
+.main-container{
+    display: flex;
+    width: 100%;
+    user-select: none;
+    /* border: 2px solid blueviolet; */
+    height: 100%;
+}
+
+ 
+/* section 1 */
+.main-container .logo-section{
+    /* border: 10px solid red; */
+    width: 55%;
+    /* background-color: rgb(64, 28, 0);  */
+    background-color: #2F1A00;
+    height: 100%;
+    margin: 0;
+} 
+
+.main-container .logo-section .logo{
+    /* border: 2px solid red; */
+    text-align: center;
+    margin-top: 50px;
+    margin-left: 100px;
+}
+ 
+
+ 
+
+
+
+/* section 2 */
+.main-container .login-section{
+    /* border: 10px solid blue; */
+    width: 45%;
+} 
+
+.main-container .login-section .login{
+    margin: auto;
+    margin-top: 140px;
+    /* border: 2px solid orangered; */
+    width: 347px;
+}
+
+
+
+.main-container .login-section .greeting{
+    /* border: 2px solid green; */
+    height: 20px;
+}
+
+.main-container .login-section .greeting h2{
+    /* border: 2px solid green; */
+    font-size: 14px;
+}
+
+
+
+.main-container .login-section .login .heading{
+    font-size: 24px;
+    font-family: 'Didact Gothic', sans-serif;
+    font-weight: bold;
+    /* border: 2px solid blue; */
+    margin: 13px 0;
+}
+
+.main-container .login-section .login .login-form{
+    margin-top: 20px;
+    /* border: 1px solid red; */
+}
+
+
+.main-container .login-section .login .login-form .form-field{
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-top: 6px;
+    margin-bottom: 16px;
+    resize: vertical;
+    font-family: 'Roboto';
+}
+
+.main-container .login-section .login .login-form label{
+    font-size: 12px;
+}
+
+
+.main-container .login-section .login .buttons{
+    margin-top: 20px;
+    font-family: 'Roboto';
+    /* border: 1px solid red; */
+}
+
+.main-container .login-section .login .buttons .signup-now{
+    /* width: 100%; */
+    width: 347px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    /* font-size: 16px; */
+    background-color: orange;
+    color: white;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 5px;
+    user-select: none;
+}
+
+.main-container .login-section .login .buttons .signup-now:active{
+    transform: translateY(0.6px);
+}
+
+.main-container .login-section .login .buttons .login-google{
+    margin-top: 10px;
+    width: 100%;
+    padding-top: 7px;
+    padding-bottom: 7px;
+    display: flex;
+    background-color: black;
+    cursor: pointer;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    border-radius: 5px;
+    /* font-size: 16px; */
+
+    transition-duration: 0.4s;
+    text-decoration: none;
+    user-select:none;
+}
+.main-container .login-section .login .buttons .login-google:active{
+    transform: translateY(2px);
+}
+
+.main-container .login-section .login .buttons .login-google .google-logo{
+    height: 35px;
+    /* width: 50px; */
+    /* border: 2px solid white; */
+    margin-right: 1px;
+}
+
+.main-container .login-section .login .buttons .login-google .google-text{
+    border: 2px solid black;
+    color: white;
+    /* font-size: 20px; */
+}
+
+
+.main-container .login-section .login .buttons .login-google .google-logo .google-signin{
+    /* border: 2px solid black; */
+    padding-top: 15px;
+}
+
+.main-container .login-section .join{
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 14px;
+    font-family: 'Roboto';
+    margin-top: 10px;
+}
+
+
+.signup_btn{
+    color: #fff;
+    background-color: orange;
+    width: 100%;
+  }
+
+  .google-login{
+    display: flex;
+    width: 100%; 
+    margin-top: 10px;
+    justify-content: center;
+    /* border: 1px solid black; */
+  }
+
+  .google-login img{
+    width: 100%;
+  }
+
+  .logo{
+    height: 40px;
+    width: 55px;
+  }
